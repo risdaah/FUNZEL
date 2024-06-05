@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+</head>
+
+<style>
+    @font-face {
+        font-family: 'Space';
+        src: url('fonts/spacerangerbold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Irish';
+        src: url('fonts/irishgrover.ttf') format('truetype');
+    }
+
+    .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-content {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        width: 50%;
+        height: 30%;
+        background-image: url('image/credit.png');
+        background-size: cover;
+        background-position: center;
+        overflow: auto;
+    }
+
+    .teks {
+        position: absolute;
+        left: 5%;
+        width: 700px;
+        z-index: 1;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #E8E205;
+
+        font-family: 'Space';
+    }
+
+    h2 {
+        font-size: 30px;
+        color: #E8E205;
+    }
+
+    p {
+        font-size: 20px;
+        color: white;
+        font-family: 'Irish';
+    }
+
+    .teks img {
+        justify-content: center;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <button onclick="showPopup()">Show Popup</button>
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-content">
+            <div class="teks">
+                <h1>WAKTU HABIS</h1>
+                <p>
+                    Sayang sekali...Ayo Mengulang Dari Awal
+                </p>
+
+                <img id="gambar" src="image/restart.png" width="50px" onclick="showPopup()">
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'flex';
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+</script>
+
+</html>
